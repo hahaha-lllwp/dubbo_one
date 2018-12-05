@@ -59,6 +59,16 @@
             <groupId>org.lwp</groupId>
             <artifactId>api</artifactId>
             <version>1.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>dubbo</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

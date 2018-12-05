@@ -10,23 +10,22 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+    <!-- 配置文件的地址 -->
     <context:property-placeholder location="config.properties" file-encoding="utf-8"/>
 
-    <!-- provider's application name, used for tracing dependency relationship -->
+    <!-- 提供者应用名称，用来追踪依赖关系，调用了那个服务等等之类的 -->
     <dubbo:application name="demo-provider"/>
 
-    <!-- use multicast registry center to export service -->
+    <!-- zookeeper注册服务提供者消费者以及其他的一些配置 -->
     <dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.address}"/>
-    <!--<dubbo:registry id="America" group="America" address="zookeeper://127.0.0.1:2181"/>-->
-    <dubbo:module name="module1"/>
 
-    <!-- use dubbo protocol to export service on port 20880 -->
+    <!-- dubbo被外部调用服务的协议及端口 20880 -->
     <dubbo:protocol name="dubbo" port="${dubbo.provider.port}"/>
 
-    <!-- service implementation, as same as regular local bean -->
+    <!-- 服务实现 -->
     <bean id="sayHelloService" class="com.lwp.provider.SayHelloServiceImpl"/>
 
-    <!-- declare the service interface to be exported -->
+    <!-- 声明暴露的服务接口 -->
     <dubbo:service interface="com.lwp.api.SayHelloService" ref="sayHelloService" version="1.0.0">
         <dubbo:method name="sayHello" timeout="1000"/>
     </dubbo:service>
