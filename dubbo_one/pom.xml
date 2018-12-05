@@ -41,6 +41,7 @@
     </profiles>
     <build>
         <plugins>
+            <!-- 编译插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,7 +49,8 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin> <!--部署插件-->
+            </plugin>
+            <!--部署插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
@@ -56,14 +58,14 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+            <!-- 打jar插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>**/dubbo.properties</exclude>
-                        <exclude>**/jdbc.properties</exclude>
-                        <exclude>**/log4j.xml</exclude>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.xml</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -93,7 +95,6 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <!--suppress UnresolvedMavenProperty -->
                             <skipAssembly>${skipAssemblyPROD}</skipAssembly>
                             <descriptors>
                                 <descriptor>src/main/assembly/prod/assembly.xml</descriptor>
@@ -102,8 +103,9 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin> <!--部署插件end-->
+            </plugin>
         </plugins>
+        <!--部署插件end-->
     </build>
 
     <dependencies>

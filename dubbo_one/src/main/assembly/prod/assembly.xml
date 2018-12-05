@@ -37,7 +37,14 @@
 			<outputDirectory>lib</outputDirectory>
 			<directoryMode>0744</directoryMode>
 			<fileMode>0644</fileMode>
+            <!-- 文件权限 7 = 0111 -->
 		</fileSet>
+        <fileSet>
+            <directory>src/main/resources/mapper</directory>
+            <outputDirectory>conf/mapper</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <fileMode>0755</fileMode>
+        </fileSet>
 	</fileSets>
 	<dependencySets>
 		<dependencySet>
