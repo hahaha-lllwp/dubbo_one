@@ -7,14 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"org.lwp.controller"})
 public class ConsumerApplication {
 
 	@Reference(version = "1.0.0")
   	private SayHelloService sayHelloService;
 
 	public static void main(String[] args) {
-		
 		SpringApplication.run(ConsumerApplication.class, args);
 	}
 	
