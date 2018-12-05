@@ -16,7 +16,7 @@
     <dubbo:application name="demo-provider"/>
 
     <!-- use multicast registry center to export service -->
-    <dubbo:registry id="China" protocol="zookeeper" address="${dubbo.zookeeper.address}"/>
+    <dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.address}"/>
     <!--<dubbo:registry id="America" group="America" address="zookeeper://127.0.0.1:2181"/>-->
     <dubbo:module name="module1"/>
 
@@ -27,7 +27,7 @@
     <bean id="sayHelloService" class="com.lwp.provider.SayHelloServiceImpl"/>
 
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.lwp.api.SayHelloService" ref="sayHelloService" version="1.0.0" registry="China">
+    <dubbo:service interface="com.lwp.api.SayHelloService" ref="sayHelloService" version="1.0.0">
         <dubbo:method name="sayHello" timeout="1000"/>
     </dubbo:service>
 </beans>
