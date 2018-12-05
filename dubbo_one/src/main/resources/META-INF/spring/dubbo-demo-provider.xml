@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+    <context:property-placeholder location="config.properties" file-encoding="utf-8"/>
+
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <dubbo:application name="demo-provider"/>
+
+    <!-- use multicast registry center to export service -->
+    <dubbo:registry id="China" protocol="zookeeper" address="${dubbo.zookeeper.address}"/>
+    <!--<dubbo:registry id="America" group="America" address="zookeeper://127.0.0.1:2181"/>-->
+    <dubbo:module name="module1"/>
+
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <dubbo:protocol name="dubbo" port="${dubbo.provider.port}"/>
+
+    <!-- service implementation, as same as regular local bean -->
+    <bean id="sayHelloService" class="com.lwp.provider.SayHelloServiceImpl"/>
+
+    <!-- declare the service interface to be exported -->
+    <dubbo:service interface="com.lwp.api.SayHelloService" ref="sayHelloService" version="1.0.0" registry="China">
+        <dubbo:method name="sayHello" timeout="1000"/>
+    </dubbo:service>
+</beans>
