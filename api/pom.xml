@@ -7,4 +7,40 @@
     <packaging>jar</packaging>
     <version>1.0.0</version>
     <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <dubbo_version>2.6.0</dubbo_version>
+        <hessian_version>4.0.51</hessian_version>
+        <tec_zkclient_version>0.9</tec_zkclient_version>
+        <org.springframework.version>4.3.8.RELEASE</org.springframework.version>
+        <junit_version>4.12</junit_version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit_version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>${hessian_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${tec_zkclient_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
