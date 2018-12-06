@@ -13,6 +13,19 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lwp</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
     <profiles>
 
         <profile>
@@ -107,13 +120,5 @@
         </plugins>
         <!--部署插件end-->
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.lwp</groupId>
-            <artifactId>api</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
 
 </project>
