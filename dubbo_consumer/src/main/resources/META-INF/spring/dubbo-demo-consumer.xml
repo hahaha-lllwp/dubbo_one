@@ -34,5 +34,4 @@
     <dubbo:reference id="demoService" check="false" interface="com.lwp.api.DemoService" version="1.0.0"/>
     <dubbo:reference id="cameraService" check="false" interface="com.lwp.api.CameraService" version="1.0.0"/>
 
-
 </beans>

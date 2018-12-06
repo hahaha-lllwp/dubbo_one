@@ -37,13 +37,16 @@
 
     <dubbo:application name="dubbo-provider"/>
 
+    <!-- 通信协议 -->
     <dubbo:protocol name="${dubbo.protocol.name}" serialization="dubbo" port="${dubbo.protocol.port}"/>
 
+    <!-- 服务注册地址 -->
     <dubbo:registry address="${dubbo.registry.address}"/>
 
     <bean id="demoService" class="com.lwp.provider.DemoServiceImpl"/>
     <bean id="cameraService" class="com.lwp.provider.CameraServiceImpl"/>
 
+    <!-- 暴露服务配置 -->
     <dubbo:service interface="com.lwp.api.DemoService" ref="demoService" protocol="dubbo" version="1.0.0"/>
 
     <dubbo:service interface="com.lwp.api.CameraService" ref="cameraService" protocol="dubbo" version="1.0.0"/>

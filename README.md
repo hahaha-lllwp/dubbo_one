@@ -13,4 +13,11 @@ Provider（dubbo_one）
 4.用test中的main方法就可以启动这个provider了，但是还不能打包直接扔到线上用。
 
 Consumer（dubbo_consumer）
-和provider相比，主要配置文件不同，差别不大
+和provider相比，主要spring的配置文件不同，差别不大
+
+Springboot启动Consumer（consumer）
+1.先用springboot脚手架初始化一个dubbo+web的简单项目
+2.把api的依赖添加到pom文件里，剔除掉api里面的dubbo和spring依赖。
+3.application.properties里的配置修改成自己使用的。
+4.把启动类中的Reference注解引用的服务换成API中声明的，尝试启动启动类。
+5.声明controller使web上可以访问。
