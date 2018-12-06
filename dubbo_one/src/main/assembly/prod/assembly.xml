@@ -45,6 +45,12 @@
             <directoryMode>0755</directoryMode>
             <fileMode>0755</fileMode>
         </fileSet>
+        <fileSet>
+            <directory>src/main/resources/mapper</directory>
+            <outputDirectory>conf</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <fileMode>0644</fileMode>
+        </fileSet>
 	</fileSets>
 	<dependencySets>
 		<dependencySet>

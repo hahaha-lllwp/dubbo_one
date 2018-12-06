@@ -64,8 +64,8 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>**/*.properties</exclude>
-                        <exclude>**/*.xml</exclude>
+                        <exclude>**/config.properties</exclude>
+                        <exclude>**/log4j.xml</exclude>
                     </excludes>
                 </configuration>
             </plugin>
