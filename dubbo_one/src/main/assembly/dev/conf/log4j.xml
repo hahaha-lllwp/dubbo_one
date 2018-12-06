@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
-                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                     xsi:schemaLocation="http://jakarta.apache.org/log4j/ ">
-    <!--<appender name="user" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="./logs/sfpp-user.html"/>
-        <param name="Append" value="true"/>
-        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
-        <layout class="org.apache.log4j.HTMLLayout"/>
-        &lt;!&ndash;<layout class="org.apache.log4j.PatternLayout">&ndash;&gt;
-        &lt;!&ndash;<param name="ConversionPattern" value="[%p] %-d{yyyy-MM-dd HH:mm:ss} [%c][%L]- %m%n" />&ndash;&gt;
-        &lt;!&ndash;</layout>&ndash;&gt;
-    </appender>-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-    <logger name="user" additivity="false">
-        <level value="info"/>
-        <appender-ref ref="user"/>
+	
+	<appender name="user" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="./logs/sfpp-user.html" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.HTMLLayout" />
+		<!--<layout class="org.apache.log4j.PatternLayout">-->
+			<!--<param name="ConversionPattern" value="[%p] %-d{yyyy-MM-dd HH:mm:ss} [%c][%L]- %m%n" />-->
+		<!--</layout>-->
+	</appender>
+	
+	<logger name="user" additivity="false">  
+       <level value="info" />
+       <appender-ref ref="user" />  
     </logger>
 
 
-    <root>
-        <priority value="info"/>
-        <!--<appender-ref ref="console" />-->
-        <appender-ref ref="user"/>
-    </root>
+	<root>
+		<priority value="info" />
+		 <!--<appender-ref ref="console" />-->
+		<appender-ref ref="user" />
+	</root>
 
 </log4j:configuration>
 

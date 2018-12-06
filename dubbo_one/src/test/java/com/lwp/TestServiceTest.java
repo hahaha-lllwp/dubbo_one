@@ -7,7 +7,7 @@ public class TestServiceTest {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"META-INF/spring/dubbo-demo-provider.xml"});
+                new String[]{"META-INF/spring/spring-dubbo-service.xml"});
         context.start();
         System.out.println("提供者服务已注册成功");
         try {

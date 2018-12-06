@@ -16,7 +16,8 @@
   limitations under the License.
   -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://code.alibabatech.com/schema/dubbo
@@ -26,11 +27,12 @@
     <dubbo:application name="demo-consumer"/>
 
     <!-- use multicast registry center to discover service -->
-    <dubbo:registry id="China" address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
     <!-- generate proxy for the remote service, then demoService can be used in the same way as the
     local regular interface -->
-    <dubbo:reference id="sayHelloService" check="false" interface="com.lwp.api.SayHelloService" version="1.0.0"/>
-    <!--<dubbo:reference id="myProvider" check="false" interface="org.apache.dubbo.demo.MyProvider" version="1.0.1"/>-->
+    <dubbo:reference id="demoService" check="false" interface="com.lwp.api.DemoService" version="1.0.0"/>
+    <dubbo:reference id="cameraService" check="false" interface="com.lwp.api.CameraService" version="1.0.0"/>
+
 
 </beans>

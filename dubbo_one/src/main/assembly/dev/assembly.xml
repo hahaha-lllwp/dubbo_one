@@ -40,7 +40,7 @@
 		</fileSet>
         <fileSet>
             <directory>src/main/resources/mapper</directory>
-            <outputDirectory>conf</outputDirectory>
+            <outputDirectory>conf/mapper</outputDirectory>
             <directoryMode>0744</directoryMode>
             <fileMode>0644</fileMode>
         </fileSet>

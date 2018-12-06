@@ -17,14 +17,14 @@
 		</layout>
 	</appender> -->
 	
-	<!--<appender name="user" class="org.apache.log4j.DailyRollingFileAppender">
+	<appender name="user" class="org.apache.log4j.DailyRollingFileAppender">
 		<param name="File" value="./logs/sfpp-user.log" />
 		<param name="Append" value="true" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="[%p] %-d{yyyy-MM-dd HH:mm:ss} [%c][%L]- %m%n" />
 		</layout>
-	</appender>-->
+	</appender>
 	
 	<logger name="user" additivity="false">  
        <level value="info" />
