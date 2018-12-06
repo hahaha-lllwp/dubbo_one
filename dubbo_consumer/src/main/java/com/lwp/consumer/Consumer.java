@@ -12,7 +12,7 @@ public class Consumer {
         DemoObject demoObject = new DemoObject();
         demoObject.setMessage("hello");
         demoObject.setName("小明");
-        demoObject.setSalary(1.2);
+        demoObject.setSalary(99821.2);
         String hello = demoService.printMessage(demoObject);
         System.out.println(hello);
 
