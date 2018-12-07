@@ -36,9 +36,11 @@
     <context:property-placeholder file-encoding="utf-8" location="classpath:config.properties"/>
 
     <dubbo:application name="dubbo-provider"/>
+    <!-- 为dubbo:protocol 和 dubbo:service 配置缺省值 protocol 为协议名称  -->
+    <dubbo:provider protocol="${dubbo.protocol.name}" serialization="hessian2" threads="50" version="1.0" connections="50"/>
 
     <!-- 通信协议 -->
-    <dubbo:protocol name="${dubbo.protocol.name}" serialization="dubbo" port="${dubbo.protocol.port}"/>
+    <dubbo:protocol port="${dubbo.protocol.port}"/>
 
     <!-- 服务注册地址 -->
     <dubbo:registry address="${dubbo.registry.address}"/>
@@ -47,8 +49,8 @@
     <bean id="cameraService" class="com.lwp.provider.CameraServiceImpl"/>
 
     <!-- 暴露服务配置 -->
-    <dubbo:service interface="com.lwp.api.DemoService" ref="demoService" protocol="dubbo" version="1.0.0"/>
+    <dubbo:service interface="com.lwp.api.DemoService" ref="demoService"/>
 
-    <dubbo:service interface="com.lwp.api.CameraService" ref="cameraService" protocol="dubbo" version="1.0.0"/>
+    <dubbo:service interface="com.lwp.api.CameraService" ref="cameraService"/>
 
 </beans>

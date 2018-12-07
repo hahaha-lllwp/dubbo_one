@@ -28,10 +28,12 @@
 
     <!-- use multicast registry center to discover service -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!-- 配置dubbo:reference的缺省值 -->
+    <dubbo:consumer check="true" version="1.0" retries="2"/>
 
     <!-- generate proxy for the remote service, then demoService can be used in the same way as the
     local regular interface -->
-    <dubbo:reference id="demoService" check="false" interface="com.lwp.api.DemoService" version="1.0.0"/>
-    <dubbo:reference id="cameraService" check="false" interface="com.lwp.api.CameraService" version="1.0.0"/>
+    <dubbo:reference id="demoService" check="false" interface="com.lwp.api.DemoService"/>
+    <dubbo:reference id="cameraService" check="false" interface="com.lwp.api.CameraService"/>
 
 </beans>
