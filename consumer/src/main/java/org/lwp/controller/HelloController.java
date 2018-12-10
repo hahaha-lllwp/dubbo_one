@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0")
     private DemoService demoService;
 
     @RequestMapping("/hello")

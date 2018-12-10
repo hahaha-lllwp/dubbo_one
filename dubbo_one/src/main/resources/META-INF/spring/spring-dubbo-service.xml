@@ -37,7 +37,7 @@
 
     <dubbo:application name="dubbo-provider"/>
     <!-- 为dubbo:protocol 和 dubbo:service 配置缺省值 protocol 为协议名称  -->
-    <dubbo:provider protocol="${dubbo.protocol.name}" serialization="hessian2" threads="50" version="1.0" connections="50"/>
+    <dubbo:provider protocol="${dubbo.protocol.name}" threads="50" version="1.0" connections="50"/>
 
     <!-- 通信协议 -->
     <dubbo:protocol port="${dubbo.protocol.port}"/>
